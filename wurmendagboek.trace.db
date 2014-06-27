@@ -1,0 +1,18 @@
+06-26 00:31:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "RUBEN" not found; SQL statement:
+SELECT 1 FROM READTITLE WHERE TITLE = Ruben [42122-179]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Comparison.optimize(Comparison.java:180)
+	at org.h2.command.dml.Select.prepare(Select.java:832)
+	at org.h2.command.Parser.prepareCommand(Parser.java:247)
+	at org.h2.engine.Session.prepareLocal(Session.java:441)
+	at org.h2.engine.Session.prepareCommand(Session.java:383)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1188)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:171)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:159)
+	at nl.plusminos.bellettrie.wurm.Database.H2.executeQuery(H2.java:50)
+	at nl.plusminos.bellettrie.wurm.Database.H2.hasTitle(H2.java:69)
+	at nl.plusminos.bellettrie.wurm.Database.H2.main(H2.java:84)
