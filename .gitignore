@@ -53,3 +53,6 @@ restfb/
 
 # Credentials
 *Credentials.java
+
+# H2 Database
+*.db
