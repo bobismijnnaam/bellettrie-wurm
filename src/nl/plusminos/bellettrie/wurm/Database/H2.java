@@ -20,7 +20,11 @@ public class H2 {
 			Class.forName("org.h2.Driver");
 			conn = DriverManager.getConnection("jdbc:h2:./wurmendagboek", "sa", "");
 			
-			String query = "CREATE TABLE IF NOT EXISTS READTITLE(TITLE VARCHAR(255))";
+			String query = "CREATE TABLE IF NOT EXISTS READTITLE("
+					+ "TITLE VARCHAR(255),"
+					+ "WRITER VARCHAR(255)"
+					+ ")";
+			
 			Statement st = conn.createStatement();
 			st.execute(query);
 		} catch (ClassNotFoundException e) {
@@ -78,8 +82,8 @@ public class H2 {
 		return conn;
 	}
 	
-	public void storeTitle(String title) throws DatabaseWurmException {
-		String query = "INSERT INTO READTITLE VALUES('" + title + "')";
+	public void storeTitle(String title, String writer) throws DatabaseWurmException {
+		String query = "INSERT INTO READTITLE VALUES('" + title + "', '" + writer + "')";
 		executeInsert(query);
 	}
 	
@@ -124,8 +128,8 @@ public class H2 {
 		
 		try {
 			h2.init();
-			h2.storeTitle("Ruben");
-			h2.storeTitle("Michiel 2");
+			h2.storeTitle("Ruben", "Schrijver1");
+			h2.storeTitle("Michiel 2", "Schrijver2");
 			
 			System.out.println(h2.hasTitle("Ruben")+"");
 			System.out.println(h2.hasTitle("Michiel 2")+"");

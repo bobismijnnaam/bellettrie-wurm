@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="commons-email/commons-email-1.3.2-javadoc.jar"/>
 	<classpathentry kind="lib" path="commons-email/commons-email-1.3.2.jar"/>
 	<classpathentry kind="lib" path="commons-email/javax.mail.jar"/>
+	<classpathentry kind="lib" path="jsoup/jsoup-1.7.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
